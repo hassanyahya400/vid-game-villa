@@ -5,17 +5,17 @@ import GamesGrid from "./components/GamesGrid";
 import GenreList from "./components/GenreList";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <Grid
       templateAreas={{ base: `"nav" "main"`, lg: `"nav nav" "aside main"` }}
+      templateColumns={{base: "1fr", lg: "200px 1fr"}}
     >
       <GridItem area="nav" bg="coral">
         <NavBar />
       </GridItem>
       <Show above="lg">
-        <GridItem area="aside" bg="">
+        <GridItem area="aside" bg="" paddingX={1}>
           <GenreList />
         </GridItem>
       </Show>
