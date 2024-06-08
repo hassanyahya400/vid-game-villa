@@ -4,6 +4,7 @@ import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
 import { Genre } from "../hooks/useGenre";
+import PlatformSelector from "./PlatformSelector";
 
 interface Props {
   selectedGenre: Genre | null;
@@ -16,6 +17,7 @@ const GamesGrid = ({ selectedGenre }: Props) => {
   if (error) return <Text>{error}</Text>;
   return (
     <>
+      <PlatformSelector/>
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4, "2xl": 5 }}
         spacing={5}
