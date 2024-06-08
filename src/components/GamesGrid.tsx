@@ -5,19 +5,20 @@ import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
 import { Genre } from "../hooks/useGenre";
 import PlatformSelector from "./PlatformSelector";
+import { Platform } from "../hooks/usePlatform";
 
 interface Props {
   selectedGenre: Genre | null;
+  selectedPlaform: Platform | null;
 }
 
-const GamesGrid = ({ selectedGenre }: Props) => {
-  const { data, isLoading, error } = useGame(selectedGenre);
+const GamesGrid = ({ selectedGenre, selectedPlaform }: Props) => {
+  const { data, isLoading, error } = useGame(selectedGenre, selectedPlaform);
   const skeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   if (error) return <Text>{error}</Text>;
   return (
     <>
-      <PlatformSelector/>
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4, "2xl": 5 }}
         spacing={5}
