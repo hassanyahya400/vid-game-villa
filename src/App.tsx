@@ -24,7 +24,7 @@ function App() {
       templateAreas={{ base: `"nav" "main"`, lg: `"nav nav" "aside main"` }}
       templateColumns={{ base: "1fr", lg: "220px 1fr" }}
     >
-      <GridItem area="nav" bg="coral">
+      <GridItem area="nav" bg="">
         <NavBar
           onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
         />
