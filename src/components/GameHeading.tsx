@@ -11,7 +11,7 @@ const GameHeading = ({ gameQuery }: Props) => {
     gameQuery.platform?.name || ""
   } Games`;
 
-  return <Heading>{heading}</Heading>;
+  return <Heading fontSize="5xl">{heading}</Heading>;
 };
 
 export default GameHeading;
