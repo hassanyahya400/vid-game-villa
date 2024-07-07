@@ -1,4 +1,4 @@
-import { GameQery } from "../App";
+import { GameQuery } from "../App";
 import useData from "./useData";
 import { Genre } from "./useGenre";
 import { Platform } from "./usePlatform";
@@ -16,7 +16,7 @@ interface FetchGamesResponse {
   results: Game[];
 }
 
-const useGame = (gameQuery: GameQery) =>
+const useGame = (gameQuery: GameQuery) =>
   useData<Game>(
     "/games",
     {
