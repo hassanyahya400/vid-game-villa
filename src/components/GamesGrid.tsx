@@ -6,10 +6,10 @@ import GameCardContainer from "./GameCardContainer";
 import { Genre } from "../hooks/useGenre";
 import PlatformSelector from "./PlatformSelector";
 import { Platform } from "../hooks/usePlatform";
-import { GameQery } from "../App";
+import { GameQuery } from "../App";
 
 interface Props {
- gameQuery: GameQery
+  gameQuery: GameQuery;
 }
 
 const GamesGrid = ({ gameQuery }: Props) => {
@@ -20,8 +20,8 @@ const GamesGrid = ({ gameQuery }: Props) => {
   return (
     <>
       <SimpleGrid
-        columns={{ sm: 1, md: 2, lg: 3, xl: 4, "2xl": 5 }}
-        spacing={5}
+        columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+        spacing={6}
         padding="5"
       >
         {isLoading

@@ -24,7 +24,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
 
   return (
     <Fragment>
-      <Heading fontSize="2xl">Genres</Heading>
+      <Heading fontSize="2xl" marginBlock="2">Genres</Heading>
       <List>
         <Button variant="link" fontSize="lg" onClick={() => onSelectGenre(null)}>
           All
