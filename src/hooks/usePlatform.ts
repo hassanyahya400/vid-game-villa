@@ -1,6 +1,5 @@
 import { platforms } from "../data/platforms";
 
-
 export interface Platform {
   id: number;
   name: string;
