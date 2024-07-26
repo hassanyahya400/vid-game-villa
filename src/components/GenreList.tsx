@@ -5,12 +5,11 @@ import {
   Image,
   List,
   ListItem,
-  Spinner,
-  Text,
+  Spinner
 } from "@chakra-ui/react";
+import { Fragment } from "react/jsx-runtime";
 import useGenre, { Genre } from "../hooks/useGenre";
 import getCroppedImageUrl from "../services/imageUrl";
-import { Fragment } from "react/jsx-runtime";
 
 interface Props {
   onSelectGenre: (genre: Genre | null) => void;
