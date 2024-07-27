@@ -10,7 +10,7 @@ import {
 import { Game } from "../hooks/useGame";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
-import getCroppedImageUrl from "../services/imageUrl";
+import { getCroppedImageUrl } from "../helper/urlHelper";
 import Emoji from "./Emoji";
 
 interface Props {

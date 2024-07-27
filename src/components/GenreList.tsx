@@ -5,11 +5,11 @@ import {
   Image,
   List,
   ListItem,
-  Spinner
+  Spinner,
 } from "@chakra-ui/react";
 import { Fragment } from "react/jsx-runtime";
 import useGenre, { Genre } from "../hooks/useGenre";
-import getCroppedImageUrl from "../services/imageUrl";
+import { getCroppedImageUrl } from "../helper/urlHelper";
 
 interface Props {
   onSelectGenre: (genre: Genre | null) => void;
@@ -23,9 +23,15 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
 
   return (
     <Fragment>
-      <Heading fontSize="2xl" marginBlock="2">Genres</Heading>
+      <Heading fontSize="2xl" marginBlock="2">
+        Genres
+      </Heading>
       <List>
-        <Button variant="link" fontSize="lg" onClick={() => onSelectGenre(null)}>
+        <Button
+          variant="link"
+          fontSize="lg"
+          onClick={() => onSelectGenre(null)}
+        >
           All
         </Button>
         {data?.results.map((genre) => (
