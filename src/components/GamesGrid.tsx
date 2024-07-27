@@ -1,14 +1,11 @@
-import { Box, Button, SimpleGrid, Text, useStatStyles } from "@chakra-ui/react";
+import { SimpleGrid, Spinner, Text } from "@chakra-ui/react";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { Fragment } from "react/jsx-runtime";
+import { GameQuery } from "../App";
 import useGame from "../hooks/useGame";
 import GameCard from "./GameCard";
-import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
-import { Genre } from "../hooks/useGenre";
-import PlatformSelector from "./PlatformSelector";
-import { Platform } from "../hooks/usePlatform";
-import { GameQuery } from "../App";
-import { Fragment } from "react/jsx-runtime";
-import InfiniteScroll from "react-infinite-scroll-component";
+import GameCardSkeleton from "./GameCardSkeleton";
 
 interface Props {
   gameQuery: GameQuery;
@@ -35,7 +32,7 @@ const GamesGrid = ({ gameQuery }: Props) => {
         dataLength={fetchedGamesCount}
         next={fetchNextPage}
         hasMore={!!hasNextPage}
-        loader={<p>Loading more games...</p>}
+        loader={<Spinner mx="45%" size="xl"/>}
       >
         <SimpleGrid
           columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
@@ -49,8 +46,8 @@ const GamesGrid = ({ gameQuery }: Props) => {
                 </GameCardContainer>
               ))
             : data?.pages.map((page, idx) => (
-                <Fragment>
-                  {page?.results.map((game, idx) => (
+                <Fragment key={idx}>
+                  {page?.results.map((game) => (
                     <GameCardContainer key={game.id}>
                       <GameCard game={game} />
                     </GameCardContainer>

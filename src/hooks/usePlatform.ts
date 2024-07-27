@@ -12,8 +12,6 @@ export interface Platform {
 const usePlatform = () => {
   const platformService = createService<Platform>("/platforms/lists/parents");
 
-  // return { data: platforms, isLoading: false, error: null };
-
   return useQuery<FetchDataResponse<Platform>>({
     queryKey: ["platforms"],
     queryFn: platformService.getAll,
