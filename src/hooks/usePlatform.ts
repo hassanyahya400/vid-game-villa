@@ -15,7 +15,7 @@ const usePlatform = () => {
   return useQuery<FetchDataResponse<Platform>>({
     queryKey: ["platforms"],
     queryFn: platformService.getAll,
-    initialData: { count: platforms.length, next: "", results: platforms },
+    initialData: platforms,
     staleTime: 24 * 60 * 60 * 1000,
   });
 };

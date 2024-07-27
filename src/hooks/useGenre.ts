@@ -15,7 +15,7 @@ const useGenre = () => {
   return useQuery<FetchDataResponse<Genre>>({
     queryKey: ["genres"],
     queryFn: genreService.getAll,
-    initialData: { count: genres.length, next: "", results: genres },
+    initialData: genres,
     staleTime: 24 * 60 * 60 * 1000,
   });
 };

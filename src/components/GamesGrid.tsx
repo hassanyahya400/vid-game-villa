@@ -32,7 +32,7 @@ const GamesGrid = ({ gameQuery }: Props) => {
         dataLength={fetchedGamesCount}
         next={fetchNextPage}
         hasMore={!!hasNextPage}
-        loader={<Spinner mx="45%" size="xl"/>}
+        loader={<Spinner mx="45%" size="lg"/>}
       >
         <SimpleGrid
           columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
