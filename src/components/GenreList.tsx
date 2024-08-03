@@ -10,12 +10,14 @@ import {
 import { Fragment } from "react/jsx-runtime";
 import { getCroppedImageUrl } from "../helper/urlHelper";
 import useGenre from "../hooks/useGenre";
+import useGameQueryStore from "../state-management/store";
+import { FC } from "react";
 
-interface Props {
-  selectedGenreId: number | null;
-  onSelectGenre: (genreId: number | null) => void;
-}
-const GenreList = ({ selectedGenreId, onSelectGenre }: Props) => {
+interface Props {}
+const GenreList: FC<Props> = ({}: Props) => {
+  const selectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId);
+  const setSelectedGenreId = useGameQueryStore((s) => s.setGenreId);
+
   const { data, isLoading, error } = useGenre();
 
   if (isLoading) return <Spinner />;
@@ -30,7 +32,7 @@ const GenreList = ({ selectedGenreId, onSelectGenre }: Props) => {
         <Button
           variant="link"
           fontSize="lg"
-          onClick={() => onSelectGenre(null)}
+          onClick={() => setSelectedGenreId(-1)}
         >
           All
         </Button>
@@ -47,7 +49,7 @@ const GenreList = ({ selectedGenreId, onSelectGenre }: Props) => {
                 fontSize="lg"
                 fontWeight={selectedGenreId === genre.id ? "bold" : "normal"}
                 variant="link"
-                onClick={() => onSelectGenre(genre.id)}
+                onClick={() => setSelectedGenreId(genre.id)}
                 whiteSpace="normal"
                 textAlign="left"
               >
