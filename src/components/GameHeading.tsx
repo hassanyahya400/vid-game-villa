@@ -18,7 +18,7 @@ const GameHeading: FC<Props> = ({}: Props) => {
     selectedPlatform?.name || ""
   } Games`;
 
-  return <Heading fontSize="5xl">{heading}</Heading>;
+  return <Heading fontSize={{ base: "3xl", lg: "5xl" }}>{heading}</Heading>;
 };
 
 export default GameHeading;
