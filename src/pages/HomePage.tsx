@@ -14,7 +14,7 @@ const HomePage = (props: Props) => {
       <Grid
         templateAreas={{ base: ` "main"`, lg: `"aside main"` }}
         templateColumns={{ base: "1fr", lg: "220px 1fr" }}
-        paddingX="5"
+       
       >
         <Show above="lg">
           <GridItem area="aside" position="fixed">
@@ -22,7 +22,7 @@ const HomePage = (props: Props) => {
           </GridItem>
         </Show>
         <GridItem area="main">
-          <Box paddingLeft="5">
+          <Box>
             <GameHeading />
             <HStack spacing="5" marginY="5">
               <PlatformSelector />

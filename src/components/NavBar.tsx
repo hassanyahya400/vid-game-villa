@@ -10,7 +10,7 @@ const NavBar: FC<Props> = ({}: Props) => {
     <Box >
       <HStack
         justifyContent="space-between"
-        padding="3"
+        padding="5"
         position="fixed"
         top="0"
         right="0"
