@@ -1,12 +1,12 @@
 import { SimpleGrid, Spinner, Text } from "@chakra-ui/react";
+import { FC } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Fragment } from "react/jsx-runtime";
 import useGames from "../hooks/useGames";
+import useGameQueryStore from "../state-management/store";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
-import { FC } from "react";
-import useGameQueryStore from "../state-management/store";
 
 interface Props {}
 

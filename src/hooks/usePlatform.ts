@@ -3,12 +3,7 @@ import ms from "ms";
 import { platforms } from "../data/platforms";
 import { FetchDataResponse } from "../services/apiClient";
 import createService from "../services/restService";
-
-export interface Platform {
-  id: number;
-  name: string;
-  slug: string;
-}
+import { Platform } from "../models/Platform";
 
 const usePlatform = () => {
   const platformService = createService<Platform>("/platforms/lists/parents");

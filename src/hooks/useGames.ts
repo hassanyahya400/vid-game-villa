@@ -1,20 +1,9 @@
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import ms from "ms";
-import { GameQuery } from "../state-management/store";
+import { Game } from "../models/Game";
 import { FetchDataResponse } from "../services/apiClient";
 import createService from "../services/restService";
-import { Platform } from "./usePlatform";
-
-export interface Game {
-  id: number;
-  name: string;
-  background_image: string;
-  parent_platforms: { platform: Platform }[];
-  metacritic: number;
-  rating_top: number;
-  slug: string;
-  description_raw?: string;
-}
+import { GameQuery } from "../state-management/store";
 
 const useGames = (gameQuery: GameQuery) => {
   const gameService = () => createService<Game>("/games");

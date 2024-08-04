@@ -1,7 +1,7 @@
+import { ReactElement } from "react";
+import { BiMeh } from "react-icons/bi";
 import { GiBullseye } from "react-icons/gi";
 import { GoThumbsup } from "react-icons/go";
-import { BiMeh } from "react-icons/bi";
-import { ReactElement } from "react";
 
 interface Props {
     rating_top: number;

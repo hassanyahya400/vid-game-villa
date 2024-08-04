@@ -3,12 +3,7 @@ import ms from "ms";
 import { genres } from "../data/genres";
 import { FetchDataResponse } from "../services/apiClient";
 import createService from "../services/restService";
-
-export interface Genre {
-  id: number;
-  name: string;
-  image_background: string;
-}
+import { Genre } from "../models/Genre";
 
 const useGenre = () => {
   const genreService = createService<Genre>("/genres");
