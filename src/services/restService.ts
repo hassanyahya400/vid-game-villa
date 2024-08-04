@@ -9,10 +9,20 @@ class RestService<T> {
     this.endpoint = endpoint;
   }
 
-  getAll = (config?: AxiosRequestConfig) => {
-    return apiClient
-      .get<FetchDataResponse<T>>(this.endpoint, config)
-      .then((res) => res.data);
+  getAll = async (config?: AxiosRequestConfig) => {
+    const res = await apiClient.get<FetchDataResponse<T>>(
+      this.endpoint,
+      config,
+    );
+    return res.data;
+  };
+
+  getOne = async (slug: string, config?: AxiosRequestConfig) => {
+    const res = await apiClient.get<T>(
+      `${this.endpoint}/${slug}`,
+      config,
+    );
+    return res.data;
   };
 }
 

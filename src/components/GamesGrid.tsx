@@ -1,7 +1,7 @@
 import { SimpleGrid, Spinner, Text } from "@chakra-ui/react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Fragment } from "react/jsx-runtime";
-import useGame from "../hooks/useGame";
+import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
@@ -20,12 +20,12 @@ const GamesGrid: FC<Props> = ({}: Props) => {
     isFetchingNextPage,
     fetchNextPage,
     hasNextPage,
-  } = useGame(gameQuery);
+  } = useGames(gameQuery);
 
   const fetchedGamesCount =
     data?.pages.reduce((total, game) => (total += game.results.length), 0) || 0;
 
-  const skeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const skeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
   if (error) return <Text>{error.message}</Text>;
   return (
@@ -36,11 +36,7 @@ const GamesGrid: FC<Props> = ({}: Props) => {
         hasMore={!!hasNextPage}
         loader={<Spinner mx="45%" size="lg" />}
       >
-        <SimpleGrid
-          columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-          spacing="4"
-          padding="5"
-        >
+        <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing="4">
           {isLoading
             ? skeleton.map((skeleton) => (
                 <GameCardContainer key={skeleton}>

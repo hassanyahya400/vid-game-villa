@@ -15,7 +15,6 @@ const HomePage = (props: Props) => {
         templateAreas={{ base: ` "main"`, lg: `"aside main"` }}
         templateColumns={{ base: "1fr", lg: "220px 1fr" }}
         paddingX="5"
-        marginY="20"
       >
         <Show above="lg">
           <GridItem area="aside" position="fixed">
