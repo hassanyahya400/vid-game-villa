@@ -36,7 +36,11 @@ const GamesGrid: FC<Props> = ({}: Props) => {
         hasMore={!!hasNextPage}
         loader={<Spinner mx="45%" size="lg" />}
       >
-        <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing="4">
+        <SimpleGrid
+          columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+          spacing="4"
+          marginBottom="3"
+        >
           {isLoading
             ? skeleton.map((skeleton) => (
                 <GameCardContainer key={skeleton}>
