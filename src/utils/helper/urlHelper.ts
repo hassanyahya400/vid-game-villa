@@ -1,4 +1,4 @@
-import noImagePlaceholder from "../../public/no-image-placeholder-image.webp";
+import noImagePlaceholder from "../../../public/no-image-placeholder-image.webp";
 
 export const getQueryParamValue = (
   paramName: string,

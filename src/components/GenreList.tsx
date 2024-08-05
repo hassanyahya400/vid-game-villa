@@ -8,7 +8,7 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 import { Fragment } from "react/jsx-runtime";
-import { getCroppedImageUrl } from "../helper/urlHelper";
+import { getCroppedImageUrl } from "../utils/helper/urlHelper";
 import useGenre from "../hooks/useGenre";
 import useGameQueryStore from "../state-management/store";
 import { FC } from "react";
