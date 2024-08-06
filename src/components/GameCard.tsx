@@ -9,6 +9,7 @@ import PlatformIconList from "./PlatformIconList";
 interface Props {
   game: Game;
 }
+
 const GameCard = ({ game }: Props) => {
   return (
     <Card height={{ lg: "350" }}>
@@ -25,7 +26,6 @@ const GameCard = ({ game }: Props) => {
           />
           <CriticScore score={game.metacritic} />
         </HStack>
-
         <Link to={game.slug}>
           <Heading fontSize="xl" marginY="2">
             {game.name}

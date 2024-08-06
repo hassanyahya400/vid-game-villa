@@ -21,6 +21,7 @@ const ExpandableText: FC<Props> = ({ children }: Props) => {
       <Button
         onClick={() => setisExpanded((prev) => !prev)}
         colorScheme="yellow"
+        marginY="2"
       >
         {isExpanded ? "Show less" : "Show more"}
       </Button>
