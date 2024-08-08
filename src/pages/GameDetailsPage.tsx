@@ -5,6 +5,7 @@ import ExpandableText from "../components/ExpandableText";
 import GameAttributes from "../components/GameAttributes";
 import GameTrailer from "../components/GameTrailer";
 import useGame from "../hooks/useGame";
+import GameScreenshots from "../components/GameScreenshots";
 
 interface Props {}
 
@@ -22,6 +23,7 @@ const GameDetailsPage: FC<Props> = ({}: Props) => {
       <ExpandableText>{game.description_raw}</ExpandableText>
       <GameAttributes game={game} />
       <GameTrailer gameSlug={game.slug} />
+      <GameScreenshots gameSlug={game.slug} />
     </Box>
   );
 };
