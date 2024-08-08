@@ -1,7 +1,6 @@
-import { Box } from "@chakra-ui/react";
 import useGameTrailer from "../hooks/useGameTrailer";
+import Trailer from "../models/Trailer";
 import { getRandomItem } from "../utils/helper/arrayHelpers";
-import { Trailer } from "../models/Trailer";
 
 type Props = {
   gameSlug: string;

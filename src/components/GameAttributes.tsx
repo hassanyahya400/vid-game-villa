@@ -1,11 +1,7 @@
-import { Box, Heading, SimpleGrid, Text } from "@chakra-ui/react";
-
-import CriticScore from "./CriticScore";
-import { Platform } from "../models/Platform";
-import { Genre } from "../models/Genre";
-import { Publisher } from "../models/Publisher";
-import { Game } from "../models/Game";
+import { SimpleGrid, Text } from "@chakra-ui/react";
 import { FC } from "react";
+import Game from "../models/Game";
+import CriticScore from "./CriticScore";
 import DefinitionItem from "./DefinitionItem";
 
 interface Props {

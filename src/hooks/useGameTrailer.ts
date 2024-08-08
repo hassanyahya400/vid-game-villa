@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import ms from "ms";
-
-import { Trailer } from "../models/Trailer";
+import Trailer from "../models/Trailer";
 import { FetchDataResponse } from "../services/apiClient";
 import createService from "../services/restService";
 

@@ -1,10 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
-import ms from "ms";
-
-import { Trailer } from "../models/Trailer";
+import Screenshot from "../models/Screenshot";
 import { FetchDataResponse } from "../services/apiClient";
 import createService from "../services/restService";
-import { Screenshot } from "../models/Screenshot";
 
 const useGameScreenshots = (gameSlug: string) => {
   const gameService = () =>
