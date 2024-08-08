@@ -1,4 +1,4 @@
-import { Box, Heading, Spinner } from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, Spinner } from "@chakra-ui/react";
 import { FC } from "react";
 import { useParams } from "react-router-dom";
 import ExpandableText from "../components/ExpandableText";
@@ -18,13 +18,17 @@ const GameDetailsPage: FC<Props> = ({}: Props) => {
   if (error || slug == undefined) throw new Error("game slug is undefined");
 
   return (
-    <Box>
-      <Heading>{game.name}</Heading>
-      <ExpandableText>{game.description_raw}</ExpandableText>
-      <GameAttributes game={game} />
-      <GameTrailer gameSlug={game.slug} />
-      <GameScreenshots gameSlug={game.slug} />
-    </Box>
+    <SimpleGrid columns={{ base: 1, lg: 2 }} gap="2">
+      <Box>
+        <Heading>{game.name}</Heading>
+        <ExpandableText>{game.description_raw}</ExpandableText>
+        <GameAttributes game={game} />
+      </Box>
+      <Box>
+        <GameTrailer gameSlug={game.slug} />
+        <GameScreenshots gameSlug={game.slug} />
+      </Box>
+    </SimpleGrid>
   );
 };
 

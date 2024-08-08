@@ -2,12 +2,13 @@ import { Box, HStack, Text } from "@chakra-ui/react";
 import { FC } from "react";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
+import { Link } from "react-router-dom";
 
 interface Props {}
 
 const NavBar: FC<Props> = ({}: Props) => {
   return (
-    <Box >
+    <Box>
       <HStack
         justifyContent="space-between"
         padding="5"
@@ -18,7 +19,9 @@ const NavBar: FC<Props> = ({}: Props) => {
         zIndex="1"
       >
         {/* <Image src={logo} boxSize={20} /> */}
-        <Text>VidGame Logo</Text>
+        <Link to="/games">
+          <Text>VidGame Logo</Text>
+        </Link>
         <SearchInput />
         <ColorModeSwitch />
       </HStack>

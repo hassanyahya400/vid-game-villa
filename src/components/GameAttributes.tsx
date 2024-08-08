@@ -13,6 +13,7 @@ interface Props {
 }
 
 const GameAttributes: FC<Props> = ({ game }: Props) => {
+  if (!game) return null;
   return (
     <SimpleGrid columns={2} gap="5" marginBlock="5">
       <DefinitionItem term="Platforms">
